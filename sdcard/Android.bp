@@ -1,5 +1,8 @@
 cc_library_static {
-    srcs: ["sdcard.cpp"],
+    srcs: [
+        "sdcard.cpp",
+        "fuse.cpp",
+    ],
     name: "libsdcard",
     cflags: [
         "-Wall",
@@ -11,6 +14,7 @@ cc_library_static {
         "libbase",
         "libcutils",
         "libminijail",
+        "libpackagelistparser",
     ],
     sanitize: {
         misc_undefined: ["integer"],
@@ -32,5 +36,6 @@ cc_binary {
         "libc",
         "libcutils",
         "libminijail",
+        "libpackagelistparser",
     ],
 }
