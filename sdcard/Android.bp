@@ -5,6 +5,7 @@ cc_library_static {
         "-Wall",
         "-Wno-unused-parameter",
         "-Werror",
+        "-Ofast",
     ],
     shared_libs: [
         "libbase",
@@ -23,6 +24,7 @@ cc_binary {
         "-Wall",
         "-Wno-unused-parameter",
         "-Werror",
+        "-Ofast",
     ],
     static_libs: ["libsdcard"],
     shared_libs: [

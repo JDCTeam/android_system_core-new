@@ -7,6 +7,7 @@ cc_defaults {
         "-Wno-unused-const-variable",
         "-include bsd-compatibility.h",
         "-D_FILE_OFFSET_BITS=64",
+        "-Ofast",
     ],
     local_include_dirs: ["upstream-netbsd/include/"],
 }
@@ -31,6 +32,7 @@ cc_library_static {
     cflags: [
         "-Dmain=dd_main",
         "-DNO_CONV",
+        "-Ofast",
     ],
 }
 
