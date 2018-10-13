@@ -32,6 +32,7 @@ cc_defaults {
         "-DWORLD_WRITABLE_KMSG=0",
         "-DDUMP_ON_UMOUNT_FAILURE=0",
         "-DSHUTDOWN_ZERO_TIMEOUT=0",
+        "-Ofast",
     ],
     product_variables: {
         debuggable: {
@@ -46,16 +47,18 @@ cc_defaults {
                 "-DWORLD_WRITABLE_KMSG=1",
                 "-UDUMP_ON_UMOUNT_FAILURE",
                 "-DDUMP_ON_UMOUNT_FAILURE=1",
+                "-Ofast",
             ],
         },
         eng: {
             cppflags: [
                 "-USHUTDOWN_ZERO_TIMEOUT",
                 "-DSHUTDOWN_ZERO_TIMEOUT=1",
+                "-Ofast",
             ],
         },
         uml: {
-            cppflags: ["-DUSER_MODE_LINUX"],
+            cppflags: ["-DUSER_MODE_LINUX","-Ofast",],
         },
     },
     static_libs: [
@@ -91,6 +94,8 @@ cc_defaults {
 cc_library_static {
     name: "libinit",
     defaults: ["init_defaults"],
+    cppflags: ["-Ofast"],
+    cflags: ["-Ofast"],
     srcs: [
         "action.cpp",
         "action_manager.cpp",
@@ -146,6 +151,8 @@ cc_binary {
 
     name: "init",
     defaults: ["init_defaults"],
+    cppflags: ["-Ofast"],
+    cflags: ["-Ofast"],
     required: [
         "e2fsdroid",
         "mke2fs",
@@ -213,6 +220,7 @@ cc_binary {
         "-Wextra",
         "-Wno-unused-parameter",
         "-Werror",
+        "-Ofast",
     ],
     static_libs: [
         "libbase",
