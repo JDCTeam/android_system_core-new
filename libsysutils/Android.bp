@@ -17,7 +17,7 @@ cc_library {
 
     logtags: ["EventLogTags.logtags"],
 
-    cflags: ["-Werror"],
+    cflags: ["-Werror","-Ofast"],
 
     shared_libs: [
         "libbase",
