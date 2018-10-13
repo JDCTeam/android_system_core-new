@@ -5,6 +5,7 @@ cc_binary {
         "-Wall",
         "-Wno-unused-parameter",
         "-Werror",
+        "-Ofast",
     ],
     shared_libs: [
         "libbase",
