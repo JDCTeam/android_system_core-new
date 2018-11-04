@@ -15,7 +15,7 @@ cc_library {
         "include",
         "kernel-headers",
     ],
-    cflags: ["-Werror","-Ofast"],
+    cflags: ["-Werror"],
 }
 
 cc_binary {
@@ -23,7 +23,7 @@ cc_binary {
     srcs: ["ion_test.c"],
     static_libs: ["libion"],
     shared_libs: ["liblog"],
-    cflags: ["-Werror","-Ofast"],
+    cflags: ["-Werror"],
 }
 
 subdirs = ["tests"]

@@ -20,7 +20,6 @@ cc_defaults {
         "-Wall",
         "-Werror",
         "-Wextra",
-        "-Ofast",
     ],
 }
 
