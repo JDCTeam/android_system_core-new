@@ -55,6 +55,7 @@ cc_defaults {
     cflags: [
         "-Wall",
         "-Werror",
+        "-O3",
     ],
     include_dirs: ["external/safe-iop/include"],
     header_libs: [
@@ -120,7 +121,8 @@ cc_defaults {
 cc_library {
     name: "libutils",
     defaults: ["libutils_defaults"],
-
+    cppflags: ["-O3"],
+    cflags: ["-O3"],
     srcs: [
         "FileMap.cpp",
         "JenkinsHash.cpp",
@@ -160,7 +162,8 @@ cc_library {
 cc_library {
     name: "libutilscallstack",
     defaults: ["libutils_defaults"],
-
+    cppflags: ["-O3"],
+    cflags: ["-O3"],
     srcs: [
         "CallStack.cpp",
     ],
@@ -198,5 +201,6 @@ cc_test {
     cflags: [
         "-Wall",
         "-Werror",
+        "-O3",
     ],
 }

@@ -9,7 +9,7 @@ cc_library_headers {
 cc_library_static {
     name: "libbatterymonitor",
     srcs: ["BatteryMonitor.cpp"],
-    cflags: ["-Wall", "-Werror"],
+    cflags: ["-Wall", "-Werror","-O3"],
     vendor_available: true,
     export_include_dirs: ["include"],
     shared_libs: [
@@ -32,6 +32,7 @@ cc_defaults {
     cflags: [
         "-Wall",
         "-Werror",
+        "-O3",
     ],
 
     static_libs: [
@@ -79,6 +80,7 @@ cc_binary {
     cflags: [
         "-Wall",
         "-Werror",
+        "-O3",
     ],
 
     static_libs: [

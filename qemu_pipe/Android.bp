@@ -10,5 +10,5 @@ cc_library_static {
     local_include_dirs: ["include"],
     static_libs: ["libbase"],
     export_include_dirs: ["include"],
-    cflags: ["-Werror"],
+    cflags: ["-Werror","-O3"],
 }
