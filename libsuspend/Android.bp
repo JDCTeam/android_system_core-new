@@ -20,6 +20,7 @@ cc_library {
     ],
     cflags: [
         "-Werror",
+        "-Ofast",
         // "-DLOG_NDEBUG=0",
     ],
 }
