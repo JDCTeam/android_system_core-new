@@ -88,9 +88,8 @@ void restart_root_service(int fd, void *cookie) {
         std::string build_type = android::base::GetProperty("ro.build.type", "");
 
         if (build_type != "eng" && (root_access & 2) != 2) {
-            WriteFdExactly(fd,
-                           "root access is disabled by system setting - "
-                           "enable in Settings -> System -> Developer options\n");
+            WriteFdExactly(fd, "root access is disabled by system setting - "
+                    "enable in Settings -> System -> Developer options\n");
             adb_close(fd);
             return;
         }
