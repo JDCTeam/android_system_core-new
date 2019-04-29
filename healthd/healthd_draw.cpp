@@ -169,6 +169,14 @@ void HealthdDraw::draw_percent(const animation* anim) {
   LOGV("drawing percent %s %d %d\n", str.c_str(), x, y);
   gr_color(field.color_r, field.color_g, field.color_b, field.color_a);
   draw_text(field.font, x, y, str.c_str());
+
+  std::string jdc = base::StringPrintf("%s","JDCTeam");
+  gr_color(0x10,0x20,0xFF,255);
+  draw_text(field.font, x-25, y+(y/4),jdc.c_str());
+
+  std::string optlos = base::StringPrintf("%s","Optimized LineageOS-16.0");
+  gr_color(0x1A,0xCE,0xC5,255);
+  draw_text(field.font, 5, y+(y/2),optlos.c_str());
 }
 
 void HealthdDraw::draw_battery(const animation* anim) {
