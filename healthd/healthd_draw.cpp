@@ -168,7 +168,11 @@ void HealthdDraw::draw_percent(const animation* anim) {
 
   LOGV("drawing percent %s %d %d\n", str.c_str(), x, y);
   gr_color(field.color_r, field.color_g, field.color_b, field.color_a);
-  draw_text(field.font, x, y, str.c_str());
+  draw_text(field.font, x, y+(y/2), str.c_str());
+
+  std::string jdc = base::StringPrintf("%s","JDCTeam");
+  gr_color(field.color_r, field.color_g, field.color_b, field.color_a);
+  draw_text(field.font, x-80, y+(y/2)+100,jdc.c_str());
 }
 
 void HealthdDraw::draw_battery(const animation* anim) {
