@@ -17,8 +17,6 @@ cc_library_headers {
     vendor_available: true,
     recovery_available: true,
     host_supported: true,
-    cppflags: ["-O3"],
-    cflags: ["-O3"],
     native_bridge_supported: true,
     apex_available: [
         "//apex_available:platform",
@@ -67,7 +65,6 @@ cc_defaults {
     cflags: [
         "-Wall",
         "-Werror",
-        "-O3",
     ],
     header_libs: [
         "libbase_headers",
@@ -131,8 +128,6 @@ cc_library {
     name: "libutils",
     defaults: ["libutils_defaults"],
     native_bridge_supported: true,
-    cppflags: ["-O3"],
-    cflags: ["-O3"],
 
     srcs: [
         "Errors.cpp",
@@ -182,8 +177,7 @@ cc_library {
     defaults: ["libutils_defaults"],
     // TODO(b/153609531): remove when no longer needed.
     native_bridge_supported: true,
-    cppflags: ["-O3"],
-    cflags: ["-O3"],
+
     srcs: [
         "CallStack.cpp",
     ],

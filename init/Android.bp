@@ -100,7 +100,6 @@ cc_defaults {
         "-DDUMP_ON_UMOUNT_FAILURE=0",
         "-DSHUTDOWN_ZERO_TIMEOUT=0",
         "-DINIT_FULL_SOURCES",
-        "-O3",
     ],
     product_variables: {
         debuggable: {
@@ -117,7 +116,6 @@ cc_defaults {
                 "-DWORLD_WRITABLE_KMSG=1",
                 "-UDUMP_ON_UMOUNT_FAILURE",
                 "-DDUMP_ON_UMOUNT_FAILURE=1",
-                "-O3",
             ],
         },
         eng: {
@@ -168,8 +166,6 @@ cc_defaults {
 cc_library_static {
     name: "libinit",
     recovery_available: true,
-    cppflags: ["-O3"],
-    cflags: ["-O3"],
     defaults: [
         "init_defaults",
         "selinux_policy_version",
@@ -209,8 +205,6 @@ cc_binary {
     name: "init_second_stage",
     recovery_available: true,
     stem: "init",
-    cppflags: ["-O3"],
-    cflags: ["-O3"],
     defaults: ["init_defaults"],
     static_libs: ["libinit"],
     required: [
@@ -341,7 +335,6 @@ cc_binary {
         "-Wextra",
         "-Wno-unused-parameter",
         "-Werror",
-        "-O3",
     ],
     static_libs: [
         "libbase",
